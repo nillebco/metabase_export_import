@@ -19,4 +19,4 @@ except:
 ametabase.export_fields_to_csv(metabase_base, metabase_exportdir)
 ametabase.export_cards_to_json(metabase_base, metabase_exportdir)
 ametabase.export_dashboards_to_json(metabase_base, metabase_exportdir)
-ametabase.export_metrics_to_json(metabase_base, metabase_exportdir)
+# ametabase.export_metrics_to_json(metabase_base, metabase_exportdir)
