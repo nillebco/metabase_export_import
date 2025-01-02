@@ -359,7 +359,7 @@ class MetabaseApi:
 
     def get_metrics(self, database_name):
         database_id = self.database_name2id(database_name)
-        res = self.query('GET', 'metric')
+        res = self.query('GET', 'card')
         metrics = []
         for m in res:
             if m['database_id'] == database_id:
@@ -680,9 +680,9 @@ class MetabaseApi:
         metricid = self.metric_name2id(database_name, metric_from_json['name'])
         metric_from_json['revision_message'] = "Import du "+datetime.datetime.now().isoformat()
         if metricid:
-            return self.query('PUT', 'metric/'+str(metricid), metric_from_json)
+            return self.query('PUT', 'card/'+str(metricid), metric_from_json)
         self.metrics_name2id = {}
-        return self.query('POST', 'metric', metric_from_json)
+        return self.query('POST', 'card', metric_from_json)
 
     def import_snippets_from_json(self, database_name, dirname, collection_name = None):
         res = []
